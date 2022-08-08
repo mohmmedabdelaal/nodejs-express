@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-code",
+  "version": "1.0.0",
+  "description": "nodejs is here",
+  "main": "Demo2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohamed abdelaal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
