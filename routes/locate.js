@@ -12,9 +12,18 @@ router.post('/add-location', (req, res) => {
     address: req.body.address,
     coords: { lat: req.body.lat, lng: req.body.lng },
   });
-  res.json({ message: 'Location added' });
+  res.json({ message: 'Data ok', locId: id });
 });
 
-router.get('/location', (req, res) => {});
+router.get('/location/:lid', (req, res) => {
+  const locationId = req.params.lid;
+  const location = locationMap.location.find((loc) => {
+    return loc.id === locationId;
+  });
+  if (!location) {
+    res.status(404).json({ message: 'Not found' });
+  }
+  res.json({ address: location.address, coordinates: location.coords });
+});
 
 module.exports = router;
